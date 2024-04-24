@@ -19,7 +19,6 @@ IMGExc = IMGExcel(root)
 # Menu
 menu_bar = tk.Menu(root)
 file_menu = tk.Menu(menu_bar, tearoff=0)
-file_menu.add_command(label="Abrir Imagem", command=lambda: open_image(app))
 file_menu.add_command(label="Sair", command=root.quit)
 menu_bar.add_cascade(label="Arquivo", menu=file_menu)
 root.config(menu=menu_bar)
@@ -27,7 +26,7 @@ root.config(menu=menu_bar)
 panel = tk.Label(root)
 
 # Botão para selecionar uma imagem
-select_button = tk.Button(root, text="Gerar Excel", command=lambda:select_image_convert(IMGExc))
+select_button = tk.Button(root, text="Gerar Excel", command=lambda:(select_image_convert(IMGExc), open_image(app)))
 select_button.pack(pady=5)
 
 root.status = status  # Para acessar a barra de status na classe ImageEditorApp
