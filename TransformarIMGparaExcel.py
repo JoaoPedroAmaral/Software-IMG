@@ -98,7 +98,7 @@ class IMGExcel:
 
 def select_image_convert(app):
         # Verifica se a imagem foi selecionada
-        file_path = "IMG\madacasca.png"
+        file_path = "IMG\winx.jpg"
 
         if file_path:
             image_gray = app.image_to_matrix_gray(file_path)
