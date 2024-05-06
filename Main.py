@@ -3,13 +3,14 @@ import tkinter as tk
 from TransformarExcelEmIMG import ImageEditorApp, open_image
 from TransformarExcelEmIMG import ImageEditorApp, open_image
 from TransformarIMGparaExcel import IMGExcel, select_image_convert
+from RgbParaCmyk import rgb_para_cmyk
 
 # Função para comparar RGB e CMYK
 def compare_rgb_cmyk():
     convert = ImageEditorApp(root);
     if app.selected_color:
         rgb_color = app.selected_color
-        cmyk_color = convert.rgb_para_cmyk(rgb_color)
+        cmyk_color = rgb_para_cmyk(rgb_color)
         status.set(f"RGB: {rgb_color}   CMYK: {cmyk_color}")
 
 # Inicializar a aplicação
