@@ -120,7 +120,7 @@ class ImageEditorApp:
 
 # Função para carregar uma imagem
 def open_image(app):
-    file_path = "IMG\winx.jpg"
+    file_path = "IMG/winx.jpg"
     if file_path:
         app.load_image(file_path)
 
