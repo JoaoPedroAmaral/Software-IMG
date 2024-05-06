@@ -1,8 +1,14 @@
 # Criar a janela principal
 import tkinter as tk
-from TransformarExcelEmIMG import ImageEditorApp, open_image
+from TransformarExcelEmIMG import ImageEditorApp, open_image, rgb_para_cmyk
 from TransformarIMGparaExcel import IMGExcel, select_image_convert
 
+# Função para comparar RGB e CMYK
+def compare_rgb_cmyk():
+    if app.selected_color:
+        rgb_color = app.selected_color
+        cmyk_color = rgb_para_cmyk(rgb_color)
+        status.set(f"RGB: {rgb_color}   CMYK: {cmyk_color}")
 
 # Inicializar a aplicação
 root = tk.Tk()
@@ -28,6 +34,9 @@ panel = tk.Label(root)
 # Botão para selecionar uma imagem
 select_button = tk.Button(root, text="Gerar Excel", command=lambda:(select_image_convert(IMGExc), open_image(app)))
 select_button.pack(pady=5)
+
+compare_button = tk.Button(root, text="Comparar RGB e CMYK", command=compare_rgb_cmyk)
+compare_button.pack(pady=5)
 
 root.status = status  # Para acessar a barra de status na classe ImageEditorApp
 
