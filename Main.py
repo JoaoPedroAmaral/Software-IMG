@@ -9,7 +9,7 @@ def compare_rgb_cmyk():
     if app.selected_color:
         rgb_color = app.selected_color
         cmyk_color = cmyk.rgb_para_cmyk(rgb_color)
-        status.set(f"RGB: {rgb_color}   CMYK: {cmyk_color}")
+
 
 # Inicializar a aplicação
 root = tk.Tk()
