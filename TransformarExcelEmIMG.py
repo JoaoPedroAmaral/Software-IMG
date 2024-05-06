@@ -10,7 +10,6 @@ from tkinter.colorchooser import askcolor
 class ImageEditorApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Editor de Imagem")
 
         self.canvas = tk.Canvas(root, width=400, height=400)
         self.canvas.pack()
@@ -57,10 +56,11 @@ class ImageEditorApp:
     def show_pixel_color(self, event):
         if self.image is not None:
             # Obter as coordenadas do pixel sob o cursor do mouse
+            IMG_rgb = cv2.cvtColor(self.image, cv2.COLOR_BGR2RGB)
             x, y = event.x, event.y
             try:
                 # Obter o valor do pixel na imagem
-                bgr_color = self.image[y, x]
+                bgr_color = IMG_rgb[y, x]
                 # Atualizar a cor selecionada
                 self.selected_color = tuple(bgr_color)
                 # Atualizar o texto na barra de status
@@ -98,25 +98,6 @@ class ImageEditorApp:
 
             # Atualizar a imagem no canvas
             self.show_image()
-    def rgb_para_cmyk(rgb_color):
-        # Normaliza os valores RGB
-        r, g, b = [x / 255.0 for x in rgb_color]
-        
-        # Calcula os valores CMY
-        c = 1 - r
-        m = 1 - g
-        y = 1 - b
-        
-        # Calcula o valor K
-        k = min(c, m, y)
-        
-        # Evita a divisão por zero
-        if k == 1:
-            cmyk_color = [0, 0, 0, 1]
-        else:
-            cmyk_color = [(c - k) / (1 - k), (m - k) / (1 - k), (y - k) / (1 - k), k]
-        
-        return [int(x * 100) for x in cmyk_color]  # Escala os valores CMYK para o intervalo de 0 a 100
 
 # Função para carregar uma imagem
 def open_image(app):
