@@ -1,6 +1,7 @@
 # Criar a janela principal
 import tkinter as tk
 from TransformarExcelEmIMG import ImageEditorApp, open_image
+from TransformarExcelEmIMG import ImageEditorApp, open_image
 from TransformarIMGparaExcel import IMGExcel, select_image_convert
 
 # Função para comparar RGB e CMYK
