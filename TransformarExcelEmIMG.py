@@ -11,7 +11,7 @@ class ImageEditorApp:
     def __init__(self, root):
         self.root = root
 
-        self.canvas = tk.Canvas(root, width=400, height=400)
+        self.canvas = tk.Canvas(root, width=200, height=200)
         self.canvas.pack()
 
         self.canvas.bind("<Motion>", self.show_pixel_color)

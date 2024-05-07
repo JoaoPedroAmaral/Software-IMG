@@ -7,11 +7,16 @@ class CMYKEditorApp:
     def __init__(self, root):
         self.root = root
 
+
         self.canvas_rgb = tk.Canvas(root, width=200, height=200)
         self.canvas_rgb.pack(side=tk.LEFT)
+        self.canvas_rgb.pack(pady=100)
+
 
         self.canvas_cmyk = tk.Canvas(root, width=200, height=200)
         self.canvas_cmyk.pack(side=tk.RIGHT)
+        self.canvas_cmyk.pack(pady=100)
+
 
         self.image_rgb = None
         self.image_cmyk = None
@@ -19,8 +24,12 @@ class CMYKEditorApp:
         self.rgb_label = tk.Label(root, text="Imagem RGB")
         self.rgb_label.pack(side=tk.LEFT)
 
+        
+
         self.cmyk_label = tk.Label(root, text="Imagem CMYK")
         self.cmyk_label.pack(side=tk.RIGHT)
+
+
 
     def load_image_rgb(self, file_path):
         try:

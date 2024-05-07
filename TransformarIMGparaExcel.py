@@ -20,6 +20,7 @@ class IMGExcel:
     def __init__(self, root):
         self.root = root
         self.root.title("Editor de Imagem")
+        
 
     def image_to_excel_cmyk(self,image_path, excel_path):
         # Leitura da imagem
