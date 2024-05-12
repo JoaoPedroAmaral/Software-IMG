@@ -10,12 +10,10 @@ class CMYKEditorApp:
 
         self.canvas_rgb = tk.Canvas(root, width=200, height=200)
         self.canvas_rgb.pack(side=tk.LEFT)
-        self.canvas_rgb.pack(pady=100)
 
 
         self.canvas_cmyk = tk.Canvas(root, width=200, height=200)
         self.canvas_cmyk.pack(side=tk.RIGHT)
-        self.canvas_cmyk.pack(pady=100)
 
 
         self.image_rgb = None
